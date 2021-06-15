@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" http-equiv="Content-Type" content="text/html">
+	<meta charset="utf-8" lang ="fr" content="text/html">
+	<link rel="stylesheet" type="text/css" href="CV.css">
+	<!-- <link rel="stylesheet" type="text/css" href="css/main.css"> -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css2?family=Antic+Slab&family=Asap:ital,wght@1,500&display=swap" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+	<link rel="icon" type="text/css" href="Brain.png">
+	<title>Curriculum Vitae</title>
+</head>
+<body>
+	<div class="container-login100" >
+	<header>
+
+		<!-- <div class="example-container">
+  			<div class="example-row">
+    			<div class="example-content-main"><img src="background.png" alt="background image" class="bgIm "></div>
+    			<div class="example-content-secondary">
+    				<div class="intro rounded">
+						<h1 class="name">Hiba <span>Belhadj</span></h1>
+						<h2>Etudiante LFSI</h2>
+					</div>
+    			</div>
+  			</div>
+		</div> -->
+
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		  <div class="container-fluid">
+		    <a class="navbar-brand" href="home.html">
+	      		<img src="2.png" alt="" width="40" height="40">
+	    	</a>
+		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+		      <span class="navbar-toggler-icon"></span>
+		    </button>
+		    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+		      <div class="navbar-nav">
+				<a class="nav-link active" href="#">Patient</a>
+		        <a class="nav-link" aria-current="page" href="Reminder.html">Reminder</a>
+		      </div>
+		    </div>
+		  </div>
+		</nav>
+	</header>
+
+	<div class="main">
+		<h1 class="title" >Patient</h1>
+		<div class="row row-cols-1 row-cols-md-4 g-4" id="patientHandler">
+			<div class="col" >
+				<div class="card h-100 " >
+					<div class="card-body text-center">
+
+							<!-- Modal content -->
+							<div class="modal-content">
+								<!-- <span class="close">&times;</span> -->
+								<button onclick="addPatient()" id="myBtn">
+									<i class="fas fa-user-plus" id="addP" ></i>
+								</button>
+								<!-- The Modal -->
+								<div id="myAddPatientModal" class="modal">
+
+									<!-- Modal content -->
+									<div class="modal-content" id="modalAddP" >
+										<span class="close">&times;</span>
+										<p id="titleMod">Add patient</p>
+										<br>
+											<div class="row mb-3">
+											  <label for="name" class="col-sm-2 col-form-label">Name</label>
+											  <div class="col-sm-10">
+												<input required placeholder="Entrer Patient Name" type="text" class="form-control" id="name">
+											  </div>
+											</div>
+
+											<div class="row mb-3">
+												<label for="stage" class="col-sm-2 col-form-label">Stage</label>
+											<div class="col-sm-10" >
+												<select required class="form-control" name="stage" id="stage-select" >
+													<option value="00" >--Please choose Alzheimer's Stage--</option>
+													<option value="memoryImpairements">Memory Impairements</option>
+													<option value="deficitsInExecutiveFunctions">Deficits In Executive Functions</option>
+													<option value="aphasia">Aphasia (Comprehensive)</option>
+													<option value="Agnosia">Agnosia</option>
+													<option value="Apraxia">Apraxia</option>
+												</select>
+
+												<select required class="form-control" name="impairement" id="stageImpairement">
+													<option value="00">--Please choose Impairement's Stage--</option>
+													<option value="semantic">Semantic Memory</option>
+													<option value="episodic">Episodic Memory</option>
+												</select>
+
+												<select required class="form-control" name="deficits" id="stageDeficit">
+													<option value="00">--Please choose Deficits Stage--</option>
+													<option value="control">Attentional Control</option>
+													<option value="planning">Planning</option>
+												</select>
+
+												<select  class="form-control" required name="aphasia" id="stageAphasia">
+													<option value="00">--Please choose Aphasia Stage--</option>
+													<option value="spoken">Spoken Language</option>
+													<option value="writing">Writing</option>
+												</select>
+
+												<select  class="form-control" required name="agnosia" id="stageAgnosia">
+													<option value="">--Please choose Agnosia Stage--</option>
+													<option value="visual">Visual</option>
+													<option value="auditory">Auditory</option>
+												</select>
+											  </div>
+
+											  <div class="row mb-3">
+												<label for="sightRange" class="col-sm-2 col-form-label">Sight Range :     <span id="demoS" class="col-sm-2 col-form-label"></span></label>
+												
+												<div class="col-sm-10 slidecontainer">
+													<br>
+													<input type="range" min="1" max="100" value="50" class="slider" id="myRangeS">
+												</div>
+											  </div>
+
+											  <div class="row mb-3">
+												<label for="hearingRange" class="col-sm-2 col-form-label">Hearing Range :     <span id="demoH" class="col-sm-2 col-form-label"> </span>  </label>
+												
+												<div class="col-sm-10 slidecontainer">
+													<br>
+													<input type="range" min="1" max="100" value="50" class="slider" id="myRangeH">
+												</div>
+											  </div>
+											
+											<div class="col mb-3 text-center ">
+												<input id="submitP" type="submit" name="" value="Add Patient" class="btn btn-dark btnspace">
+											<input type="reset" name="" value="Cancel" class="btn btn-dark btnspace">
+											</div>
+											
+									</div>
+								</div>
+							</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- The Modal -->
+	<div id="myModal" class="modal">
+
+		<!-- Modal content -->
+		<div class="modal-content" id="modal" >
+			<span class="close">&times;</span>
+			<p>Please write down this Code or scan qrCode bellow:</p>
+			<br>
+		</div>
+	</div>
+
+	<!-- The Modal -->
+	<div id="myHistoryModal" class="modal">
+
+		<!-- Modal content -->
+		<div class="modal-content" id="modal" >
+			<span class="close">&times;</span>
+			<table id="history">
+				<tr>
+					<th>Object</th>
+					<th>Verb</th>
+					<th>Date</th>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	<br><br>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script> 
+	<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script> 
+	<!-- <script src="index.js"></script> -->
+	<!-- <script type="text/javascript" src="Script.js"></script> -->
+	<script src="Patient.js"></script>
+</body>
+</html>

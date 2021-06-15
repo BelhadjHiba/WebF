@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" http-equiv="Content-Type" content="text/html">
+	<meta charset="utf-8" lang ="fr" content="text/html">
+	<link rel="stylesheet" type="text/css" href="CV.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css2?family=Antic+Slab&family=Asap:ital,wght@1,500&display=swap" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+	<link rel="icon" type="text/css" href="Brain.png">
+	<title>Curriculum Vitae</title>
+</head>
+<body>
+	<header>
+
+		<!-- <div class="example-container">
+  			<div class="example-row">
+    			<div class="example-content-main"><img src="background.png" alt="background image" class="bgIm "></div>
+    			<div class="example-content-secondary">
+    				<div class="intro rounded">
+						<h1 class="name">Hiba <span>Belhadj</span></h1>
+						<h2>Etudiante LFSI</h2>
+					</div>
+    			</div>
+  			</div>
+		</div> -->
+
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		  <div class="container-fluid">
+		    <a class="navbar-brand" href="home.html">
+	      		<img src="1.png" alt="" width="40" height="40">
+	    	</a>
+		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+		      <span class="navbar-toggler-icon"></span>
+		    </button>
+		    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+		      <div class="navbar-nav">
+				<a class="nav-link active" href="#">Events</a>
+		        <a class="nav-link" aria-current="page" href="Patient.html">Patient</a>
+		        <a class="nav-link" aria-current="page" href="Reminder.html">Reminder</a>
+		      </div>
+		    </div>
+		  </div>
+		</nav>
+	</header>
+
+	<div class="main">
+		<h1 class="title" >Events</h1>
+		<div class="row row-cols-1 row-cols-md-4 g-4" id="patientHandler">
+			<div class="col" >
+				<div class="card h-100 " >
+					<div class="card-body text-center">
+
+							<!-- Modal content -->
+							<div class="modal-content">
+								<!-- <span class="close">&times;</span> -->
+								<button onclick="addEvent()" id="myBtn">
+									<i class="fas fa-user-plus" id="addE" ></i>
+								</button>
+								<!-- The Modal -->
+								<div id="myAddEventModal" class="modal">
+
+									<!-- Modal content -->
+									<div class="modal-content" id="modalAddP" >
+										<span class="close">&times;</span>
+										<p>Add Event</p>
+										<br>
+										<div class="row mb-3">
+											<label for="reminderList" class="col-sm-2 col-form-label">Reminder Type</label>
+											<div class="col-sm-10" >
+												<select required class="form-control" name="reminder" id="reminderList" >
+													<option value="00" >--Please choose Your Reminder--</option>
+												</select>
+											</div>
+										</div>
+									
+										<div class="row mb-3">
+											<label for="startD" class="col-sm-2 col-form-label">Enter a start date: </label>
+											<div class="col-sm-10">
+												<input id="startD" type="datetime-local" name="startDate" class="form-control" >
+											</div>
+										</div>
+
+										<div class="row mb-3">
+											<label for="fr" class="col-sm-2 col-form-label">Frequency</label>
+											<div class="col-sm-10" >
+												<select required class="form-control" name="frequency" id="fr" >
+													<option value="00" >--Please choose Your Frequency--</option>
+													<option value="EveryDay">EveryDay</option>
+													<option value="EveryWeek">Every Week</option>
+													<option value="ConstantDays">Constant Days</option>
+												</select>
+												<br>
+												<div id="rWeekdays" class="col col-form-label">
+													<div id="repeat">
+														<input type="checkbox" name="sunday" id="sunday">
+														<label for="sunday">Sunday</label>
+
+														<input type="checkbox" name="monday" id="monday">
+														<label for="monday">Monday</label>
+
+														<input type="checkbox" name="tuesday" id="tuesday">
+														<label for="tuesday">Tuesday</label>
+
+														<input type="checkbox" name="wednesday" id="wednesday">
+														<label for="wednesday">Wednesday</label>
+
+														<input type="checkbox" name="thursday" id="thursday">
+														<label for="thursday">Thursday</label>
+
+														<input type="checkbox" name="friday" id="friday">
+														<label for="friday">Friday</label>
+
+														<input type="checkbox" name="saturday" id="saturday">
+														<label for="saturday">Saturday</label>
+													</div>
+												</div>
+
+												
+												
+												<div id="inst" class="col col-form-label">
+													<div id="boxE">
+														<input type="checkbox" name="endBox" id="endBox">
+														<label for="endBox">End Time </label>
+													</div>
+												</div>
+											</div>
+										</div>
+
+
+										<div class="row mb-3" id="endDate">
+												<label for="endD" class="col-sm-2 col-form-label">Enter an End date: </label>
+												<div class="col-sm-10">
+													<input id="endD" type="datetime-local" name="endD" class="form-control" >
+												</div>
+											
+										</div>
+										
+										
+										<div class="row mb-3" id="itv">
+											<label for="interval" class="col-sm-2 col-form-label">Interval</label>
+											<div class="col-sm-10">
+											  <input required placeholder="Enter number of days interval" type="text" name="interval" class="form-control" id="interval">
+											</div>
+										</div>
+										
+										
+										<div class="col mb-3 text-center ">
+											<input id="submitE" type="submit" name="" value="Afeect Event" class="btn btn-dark btnspace">
+											<input type="reset" name="" value="Cancel" class="btn btn-dark btnspace">
+										</div>
+											
+
+											
+											
+									</div>
+								</div>
+							</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<br><br>
+
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script> 
+	<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script> 
+	<!-- <script src="index.js"></script> -->
+	<!-- <script type="text/javascript" src="Script.js"></script> -->
+	<script src="Events.js"></script>
+</body>
+</html>
